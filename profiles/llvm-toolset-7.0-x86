@@ -1,4 +1,4 @@
-include(llvm-toolset-7)
+include(llvm-toolset-7.0)
 [settings]
 arch=x86
 [buildenv]
