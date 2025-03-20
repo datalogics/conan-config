@@ -3,17 +3,8 @@ include(boost-options)
 include(options-libtiff)
 [settings]
 os=Linux
-arch=x86_64
 compiler=clang
 compiler.version=7.0
 compiler.toolset=llvm-toolset-7
 compiler.libcxx=libstdc++
-compiler.runtime=dynamic
-compiler.runtime_type=Release
-compiler.runtime_version=v143
 build_type=Release
-[buildenv]
-CC=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang
-CXX=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang++
-LD_LIBRARY_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64
-PKG_CONFIG_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig

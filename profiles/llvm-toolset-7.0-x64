@@ -1,9 +1,9 @@
 include(llvm-toolset-7.0)
 [settings]
-arch=armv8
+os=Linux
+arch=x86_64
 [buildenv]
-PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/bin
 CC=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang
 CXX=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang++
 LD_LIBRARY_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64
-X_SCLS=llvm-toolset-7.0
+PKG_CONFIG_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig
