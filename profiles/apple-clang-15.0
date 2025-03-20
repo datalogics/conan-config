@@ -9,4 +9,5 @@ os.subsystem=None
 compiler=apple-clang
 compiler.version=15.0
 compiler.libcxx=libc++
+compiler.runtime=dynamic
 build_type=Release
