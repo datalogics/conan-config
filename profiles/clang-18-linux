@@ -3,6 +3,7 @@ os=Linux
 compiler=clang
 compiler.version=18
 compiler.libcxx=libstdc++
+compiler.toolset=None
 build_type=Release
 [buildenv]
 CC=/usr/bin/clang
