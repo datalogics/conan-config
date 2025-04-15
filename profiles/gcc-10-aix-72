@@ -5,6 +5,7 @@ os=AIX
 os.version=7.2
 compiler=gcc
 compiler.version=10.3
+compiler.threads=posix
 compiler.libcxx=libstdc++
 compiler.threads=posix
 compiler.exception=None
