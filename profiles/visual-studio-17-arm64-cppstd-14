@@ -1,0 +1,2 @@
+include(visual-studio-17-arm64)
+include(cppstd-14)
