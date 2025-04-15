@@ -1,3 +1,5 @@
+[settings]
+os.subsystem=None
 [options]
 # --hash makes shorter filenames in the build directory, to avoid problems
 # on Windows, where b2.exe is 32-bit and doesn't support long paths.
