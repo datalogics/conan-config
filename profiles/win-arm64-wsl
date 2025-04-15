@@ -7,5 +7,5 @@ libiconv/*:arch=x86_64
 opencv/*:neon=True
 [conf]
 tools.gnu:host_triplet=aarch64-w64-mingw32
-opencv:tools.cmake.cmaketoolchain:cxxflags+=-D_ARM64_DISTINCT_NEON_TYPES=1
-opencv:tools.build:defines+=["ENABLE_NEON=ON", "OPENCV_ENABLE_FP16=ON"]
+opencv/*:tools.cmake.cmaketoolchain:cxxflags+=-D_ARM64_DISTINCT_NEON_TYPES=1
+opencv/*:tools.build:defines+=["ENABLE_NEON=ON", "OPENCV_ENABLE_FP16=ON"]
