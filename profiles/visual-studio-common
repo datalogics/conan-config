@@ -1,4 +1,5 @@
 [settings]
+os=Windows
 os.subsystem=None
 [options]
 # --hash makes shorter filenames in the build directory, to avoid problems
