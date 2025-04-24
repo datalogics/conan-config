@@ -1,0 +1,29 @@
+include(boost-options)
+include(options-libtiff)
+[settings]
+os=AIX
+os.version=7.2
+compiler=gcc
+compiler.version=10.3
+compiler.libcxx=libstdc++
+build_type=Release
+[options]
+# Fix up building b2 on AIX. This will skip toolset autodetection and make b2
+# use the CC and CXX variables for building itself (and maybe even for building
+# Boost), instead of trying to autodetect a compiler, which finds some other
+# compiler and fails.
+# See the b2 Conan recipe for discussion.
+# New b2 build script in 4.7.1 needs cxx toolset to work with use_cxx_env.
+b2:toolset=cxx
+b2:use_cxx_env=True
+[buildenv]
+CONAN_CPU_COUNT=4
+CC=/opt/freeware/bin/gcc-10
+CXX=/opt/freeware/bin/g++-10
+# This is also in the 64-bit APDFL build, but to keep all b2-building options together,
+# put it here. Assume that the compiler already does C++11.
+# Also, the compiler needs to be in the path for b2 to build itself.
+b2:NO_CXX11_CHECK=true
+bison:CPPFLAGS=-D_POSIX_SOURCE=1 -D_XOPEN_SOURCE_EXTENDED=1
+swig:CPPFLAGS=-D_POSIX_SOURCE=1 -D_XOPEN_SOURCE_EXTENDED=1
+swig:STRIP=:
