@@ -6,6 +6,7 @@ os.version=7.2
 compiler=gcc
 compiler.version=10.3
 compiler.libcxx=libstdc++
+compiler.threads=None
 build_type=Release
 [options]
 # Fix up building b2 on AIX. This will skip toolset autodetection and make b2
