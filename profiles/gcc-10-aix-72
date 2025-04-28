@@ -6,6 +6,9 @@ os.version=7.2
 compiler=gcc
 compiler.version=10.3
 compiler.libcxx=libstdc++
+compiler.threads=posix
+compiler.exception=None
+
 build_type=Release
 [options]
 # Fix up building b2 on AIX. This will skip toolset autodetection and make b2
@@ -16,6 +19,7 @@ build_type=Release
 # New b2 build script in 4.7.1 needs cxx toolset to work with use_cxx_env.
 b2/*:toolset=cxx
 b2/*:use_cxx_env=True
+giflib/*:utils=False
 [buildenv]
 CONAN_CPU_COUNT=4
 CC=/opt/freeware/bin/gcc-10
