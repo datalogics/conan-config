@@ -1,7 +1,6 @@
-include(visual-studio-common)
+include(msvc-common)
 [settings]
 os=Windows
-os_build=Windows
 os.subsystem=msys2
 arch=x86_64
 arch_build=x86_64
