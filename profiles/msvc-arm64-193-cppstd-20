@@ -1,2 +1,2 @@
 include(msvc-arm64-193)
-include(cppstd-17)
+include(cppstd-20)
