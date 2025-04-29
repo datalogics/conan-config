@@ -1,3 +1,0 @@
-include(visual-studio-17)
-[settings]
-compiler.runtime=MT

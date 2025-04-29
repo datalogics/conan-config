@@ -1,2 +1,0 @@
-include(visual-studio-17)
-include(cppstd-14)
