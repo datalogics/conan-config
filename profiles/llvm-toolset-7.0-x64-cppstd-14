@@ -1,2 +1,0 @@
-include(llvm-toolset-7.0-x64)
-include(cppstd-14)

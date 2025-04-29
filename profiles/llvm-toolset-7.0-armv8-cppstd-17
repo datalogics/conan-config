@@ -1,2 +1,0 @@
-include(llvm-toolset-7.0-armv8)
-include(cppstd-17)
