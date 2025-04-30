@@ -1,4 +1,2 @@
-include(msvc-194)
+include(msvc-arm64-194)
 include(cppstd-17)
-[settings]
-arch=armv8

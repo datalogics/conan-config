@@ -1,6 +1,0 @@
-include(llvm-toolset-7.0)
-[settings]
-arch=x86
-[buildenv]
-CC=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang -m32
-CXX=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang++ -m32

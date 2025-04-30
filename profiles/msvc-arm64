@@ -1,0 +1,15 @@
+[settings]
+arch=armv8
+# override the base compiler.update
+compiler.update=8
+# bring in settings from win-arm64-wsl
+msys2/*:arch=x86_64
+doxygen/*:arch=x86_64
+strawberryperl/*:arch=x86_64
+libiconv/*:arch=x86_64
+[options]
+opencv/*:neon=True
+[conf]
+tools.gnu:host_triplet=aarch64-w64-mingw32
+opencv:tools.cmake.cmaketoolchain:cxxflags+=-D_ARM64_DISTINCT_NEON_TYPES=1
+opencv:tools.build:defines+=["ENABLE_NEON=ON", "OPENCV_ENABLE_FP16=ON"]

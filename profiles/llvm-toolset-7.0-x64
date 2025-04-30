@@ -1,9 +1,0 @@
-include(llvm-toolset-7.0)
-[settings]
-os=Linux
-arch=x86_64
-[buildenv]
-CC=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang
-CXX=/opt/rh/llvm-toolset-7.0/root/usr/bin/clang++
-LD_LIBRARY_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64
-PKG_CONFIG_PATH=+(path)/opt/rh/llvm-toolset-7.0/root/usr/lib64/pkgconfig
