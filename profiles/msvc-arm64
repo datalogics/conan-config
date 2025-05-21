@@ -9,6 +9,7 @@ strawberryperl/*:arch=x86_64
 libiconv/*:arch=x86_64
 [options]
 opencv/*:neon=True
+adobe_pdf_library/*:with_dli=False
 [conf]
 tools.gnu:host_triplet=aarch64-w64-mingw32
 opencv/*:tools.build:cxxflags+=-D_ARM64_DISTINCT_NEON_TYPES=1
