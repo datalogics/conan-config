@@ -1,0 +1,4 @@
+include(global)
+include(clang-18-linux)
+[settings]
+arch=x86
