@@ -19,14 +19,14 @@
    "disabled": true
   },
   {
-   "name": "conan2-alias-production",
-   "url": "https://datalogics.jfrog.io/artifactory/api/conan/conan2-alias-production",
+   "name": "conan-virtual-prod",
+   "url": "https://datalogics.jfrog.io/artifactory/api/conan/conan-virtual-prod",
    "verify_ssl": true,
    "disabled": false
   },
   {
-   "name": "conan2-alias-staging",
-   "url": "https://datalogics.jfrog.io/artifactory/api/conan/conan2-alias-staging",
+   "name": "conan-virtual-staging",
+   "url": "https://datalogics.jfrog.io/artifactory/api/conan/conan-virtual-staging",
    "verify_ssl": true,
    "disabled": true
   }
