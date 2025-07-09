@@ -4,6 +4,7 @@ os=Windows
 os.subsystem=None
 compiler=msvc
 compiler.runtime=dynamic
+compiler.update=9
 compiler.toolset=v143
 build_type=Release
 [options]
