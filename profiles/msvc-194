@@ -2,3 +2,4 @@ include(msvc-common)
 [settings]
 compiler.version=194
 compiler.update=4
+doxygen/*:compiler.update=2
