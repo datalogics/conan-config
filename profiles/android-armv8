@@ -1,12 +1,14 @@
 include(boost-options)
 [settings]
 os=Android
-os.api_level=ANY
+os.api_level=36
 arch=armv8
 compiler=clang
+compiler.version="19"
 compiler.libcxx=c++_shared
+compiler.toolset=None
 build_type=Release
 
 [tool_requires]
-*: android-ndk/[*]
+*: android-ndk/r28b
 
