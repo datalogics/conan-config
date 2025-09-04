@@ -1,7 +1,7 @@
 include(boost-options)
 [settings]
 os=Android
-os.api_level=21
+os.api_level=ANY
 arch=armv8
 compiler=clang
 compiler.libcxx=c++_shared
