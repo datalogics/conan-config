@@ -1,0 +1,3 @@
+include(apple-clang-16.4-iOS)
+include(cppstd-17)
+include(options-libtiff)
