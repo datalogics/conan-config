@@ -14,7 +14,6 @@ build_type=Release
 
 [conf]
 tools.gnu:make_program=/opt/freeware/bin/gmake
-
 [options]
 # Fix up building b2 on AIX. This will skip toolset autodetection and make b2
 # use the CC and CXX variables for building itself (and maybe even for building

@@ -1,8 +1,8 @@
 include(macos-10.15)
 include(options-libtiff)
 include(boost-options)
+
 [settings]
-os=Macos
 os.sdk=macosx
 os.sdk_version=14.0
 os.subsystem=None
