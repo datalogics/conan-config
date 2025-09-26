@@ -1,0 +1,4 @@
+[options]
+icu/*:shared=True
+icu/*:data_packaging="library"
+icu/*:with_extras=False

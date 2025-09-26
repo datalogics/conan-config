@@ -1,12 +1,10 @@
-include(macos-12.0)
+include(ios-18.5)
+include(arch-armv8)
 include(options-libtiff)
 include(boost-options)
 
 [settings]
-os.sdk=macosx
-os.sdk_version=15.2
-os.subsystem=None
 compiler=apple-clang
-compiler.version=16.0
+compiler.version=16.4
 compiler.libcxx=libc++
 build_type=Release

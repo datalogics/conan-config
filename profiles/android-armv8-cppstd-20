@@ -1,0 +1,2 @@
+include(android-armv8)
+include(cppstd-20)

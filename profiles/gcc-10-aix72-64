@@ -2,9 +2,6 @@ include(global)
 include(gcc-10-aix-72)
 [settings]
 arch=ppc64
-[options]
-b2/*:use_cxx_env=True
-b2/*:toolset=cxx
 [buildenv]
 OBJECT_MODE=64
 CFLAGS=-fexceptions -pthread -mcpu=power8 -maix64 -mvsx -mcmodel=large

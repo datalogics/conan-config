@@ -3,8 +3,6 @@ include(cppstd-14)
 include(options-libtiff)
 include(boost_excludes)
 [options]
-boost/*:i18n_backend_iconv=off
-boost/*:i18n_backend_icu=True
 boost/*:without_math=True
 boost/*:debug_level=2
 boost/*:extra_b2_flags='cxxstd=14 -d+2 -q cxxflags="-maix64"'
