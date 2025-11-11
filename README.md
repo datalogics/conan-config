@@ -9,6 +9,10 @@ Contains a standard Conan 2 configuration for Datalogics, including:
 
 This configuration can be installed with `conan config install`. 
 
+## Contributing
+
+See [AGENTS.md](AGENTS.md) for contributor guidelines covering profile layout, validation commands, and PR expectations. Share the verification checklist with your team so everyone runs the required `conan install`/`conan profile show` smoke tests before opening changes.
+
 ## Using
 
 ```bash
