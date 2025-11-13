@@ -1,3 +1,4 @@
 [options]
 boost/*:i18n_backend_iconv=off
 boost/*:i18n_backend_icu=True
+boost/*:without_process=True

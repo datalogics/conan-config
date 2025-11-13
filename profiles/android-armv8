@@ -1,14 +1,12 @@
 include(boost-options)
+include(options-libtiff)
 [settings]
 os=Android
-os.api_level=36
+os.api_level=35
 arch=armv8
 compiler=clang
 compiler.version="19"
 compiler.libcxx=c++_shared
 compiler.toolset=None
 build_type=Release
-
-[tool_requires]
-*: android-ndk/r28b
 
