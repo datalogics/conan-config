@@ -1,0 +1,7 @@
+[settings]
+os=Macos
+os.version=15.0
+os.sdk=macosx
+os.sdk_version=15.5
+os.subsystem=catalyst
+os.subsystem.ios_version=18.5
