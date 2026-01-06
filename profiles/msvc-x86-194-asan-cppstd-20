@@ -1,0 +1,2 @@
+include(msvc-x86-194-cppstd-20)
+include(sanitizer-address)

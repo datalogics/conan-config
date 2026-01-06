@@ -1,0 +1,2 @@
+include(clang-18-linux-armv8-cppstd-20)
+include(sanitizer-thread)
