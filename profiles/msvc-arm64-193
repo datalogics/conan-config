@@ -1,2 +1,5 @@
 include(msvc-193)
 include(msvc-arm64)
+
+[options]
+*:with_dli=False
