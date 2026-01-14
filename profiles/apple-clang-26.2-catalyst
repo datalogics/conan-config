@@ -4,6 +4,7 @@ include(options-libtiff)
 include(boost-options)
 
 [settings]
+os.sdk_version=26.2
 compiler=apple-clang
 compiler.version=26.2
 compiler.libcxx=libc++
