@@ -1,2 +1,0 @@
-include(apple-clang-17.0-intel-cppstd-20)
-include(sanitizer-address)

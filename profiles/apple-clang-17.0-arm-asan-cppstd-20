@@ -1,2 +1,0 @@
-include(apple-clang-17.0-arm-cppstd-20)
-include(sanitizer-address)

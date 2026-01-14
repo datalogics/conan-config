@@ -1,0 +1,2 @@
+include(apple-clang-26.2-intel-cppstd-17)
+include(sanitizer-undefined)
