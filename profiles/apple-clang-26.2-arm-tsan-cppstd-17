@@ -1,0 +1,2 @@
+include(apple-clang-26.2-arm-cppstd-17)
+include(sanitizer-thread)

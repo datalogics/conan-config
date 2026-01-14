@@ -1,0 +1,2 @@
+include(apple-clang-26.2-catalyst)
+include(cppstd-20)

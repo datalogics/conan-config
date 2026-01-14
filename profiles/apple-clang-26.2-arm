@@ -1,0 +1,3 @@
+include(global)
+include(apple-clang-26.2)
+include(arch-armv8)
