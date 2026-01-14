@@ -1,0 +1,2 @@
+include(apple-clang-17.0-intel-cppstd-17)
+include(sanitizer-thread)

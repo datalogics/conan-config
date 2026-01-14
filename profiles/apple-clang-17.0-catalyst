@@ -1,0 +1,10 @@
+include(macos-15.0-catalyst)
+include(arch-armv8)
+include(options-libtiff)
+include(boost-options)
+
+[settings]
+compiler=apple-clang
+compiler.version=17.0
+compiler.libcxx=libc++
+build_type=Release
