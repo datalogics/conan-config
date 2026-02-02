@@ -7,6 +7,7 @@ msys2/*:arch=x86_64
 doxygen/*:arch=x86_64
 strawberryperl/*:arch=x86_64
 libiconv/*:arch=x86_64
+xapian-core/*:arch=x86_64
 [options]
 opencv/*:neon=True
 adobe_pdf_library/*:with_dli=False
