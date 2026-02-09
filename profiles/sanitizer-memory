@@ -2,13 +2,14 @@
 # IMPORTANT: MSan requires libc++ instead of libstdc++, and all code must be instrumented
 #
 # Prerequisites:
-#   1. MSan-instrumented libc++ must be built at the path below
+#   1. Install: sudo dnf install datalogics-msan-runtime-18
+#      (or set MSAN_RUNTIME_DIR to a custom location)
 #   2. Rebuild ALL dependencies with this profile (--build=*)
 #
 # Usage:
 #   conan install . -pr clang-18-linux-x86_64-msan-cppstd-17 --build=* -o sanitize=memory
 
-{% set MSAN_RUNTIME_DIR = "/devlocal/robb/pdfl18_all/msan-runtime/install" %}
+{% set MSAN_RUNTIME_DIR = os.getenv("MSAN_RUNTIME_DIR", "/opt/datalogics/msan-runtime-18") %}
 
 [settings]
 # Override libstdc++ from base profile - MSan requires libc++
