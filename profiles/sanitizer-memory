@@ -25,5 +25,5 @@ LD_LIBRARY_PATH={{MSAN_RUNTIME_DIR}}/lib
 # MSan compile flags with origin tracking for better error messages
 tools.build:cflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "-fno-omit-frame-pointer"]
 tools.build:cxxflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "-fno-omit-frame-pointer", "-stdlib=libc++", "-nostdinc++", "-isystem", "{{MSAN_RUNTIME_DIR}}/include/c++/v1"]
-tools.build:sharedlinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib"]
-tools.build:exelinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib"]
+tools.build:sharedlinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
+tools.build:exelinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
