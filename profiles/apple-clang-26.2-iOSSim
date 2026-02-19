@@ -1,0 +1,10 @@
+include(ios-sim-18.5)
+include(arch-armv8)
+include(options-libtiff)
+include(boost-options)
+
+[settings]
+compiler=apple-clang
+compiler.version=26.2
+compiler.libcxx=libc++
+build_type=Release
