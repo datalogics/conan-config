@@ -1,3 +1,2 @@
 include(apple-clang-26.2-iOS)
 include(cppstd-17)
-include(options-libtiff)

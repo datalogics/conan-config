@@ -1,3 +1,2 @@
 include(apple-clang-16.4-arm)
 include(cppstd-17)
-include(options-libtiff)

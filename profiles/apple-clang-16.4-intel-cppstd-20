@@ -1,3 +1,2 @@
 include(apple-clang-16.4-intel)
 include(cppstd-20)
-include(options-libtiff)
