@@ -1,6 +1,5 @@
 include(gcc-10-aix72-64)
 include(cppstd-17)
-include(options-libtiff)
 include(boost_excludes)
 [options]
 boost/*:without_math=True
