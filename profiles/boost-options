@@ -8,3 +8,4 @@ boost/*:without_python=True
 boost/*:without_stacktrace=True
 boost/*:without_wave=True
 boost/*:without_graph=True
+boost/*:without_graph_parallel=True
