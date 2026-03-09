@@ -1,4 +1,11 @@
 [options]
 boost/*:i18n_backend_iconv=off
 boost/*:i18n_backend_icu=True
+boost/*:without_graph_parallel=True
+boost/*:without_mpi=True
 boost/*:without_process=True
+boost/*:without_python=True
+boost/*:without_stacktrace=True
+boost/*:without_wave=True
+boost/*:without_graph=True
+boost/*:without_graph_parallel=True
