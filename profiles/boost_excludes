@@ -6,6 +6,5 @@ boost/*:without_fiber=True
 boost/*:without_graph=True
 boost/*:without_iostreams=True
 boost/*:without_json=True
-boost/*:without_serialization=True
 boost/*:without_timer=True
 boost/*:without_type_erasure=True
