@@ -1,0 +1,3 @@
+include(clang-20-linux-x86_64)
+include(cppstd-17)
+include(sanitizer-undefined)

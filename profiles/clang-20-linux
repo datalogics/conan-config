@@ -1,0 +1,11 @@
+include(boost-options)
+[settings]
+os=Linux
+compiler=clang
+compiler.version=20
+compiler.libcxx=libstdc++
+compiler.toolset=None
+build_type=Release
+[buildenv]
+CC=/usr/bin/clang
+CXX=/usr/bin/clang++
