@@ -1,4 +1,4 @@
-include(ios-18.5)
+include(ios-26.2)
 include(arch-armv8)
 include(options-libtiff)
 include(boost-options)
