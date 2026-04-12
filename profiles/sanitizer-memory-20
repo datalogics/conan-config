@@ -27,3 +27,4 @@ tools.build:cflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "
 tools.build:cxxflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "-fno-omit-frame-pointer", "-stdlib=libc++", "-nostdinc++", "-isystem", "{{MSAN_RUNTIME_DIR}}/include/c++/v1"]
 tools.build:sharedlinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
 tools.build:exelinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
+tools.gnu:configure_args+=["ac_cv_tls=__thread"]
