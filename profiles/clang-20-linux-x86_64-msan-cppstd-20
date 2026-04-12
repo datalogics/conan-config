@@ -1,2 +1,2 @@
 include(clang-20-linux-x86_64-cppstd-20)
-include(sanitizer-memory)
+include(sanitizer-memory-20)
