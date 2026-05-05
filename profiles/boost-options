@@ -9,3 +9,4 @@ boost/*:without_stacktrace=True
 boost/*:without_wave=True
 boost/*:without_graph=True
 boost/*:without_graph_parallel=True
+boost/*:without_cobalt=True
