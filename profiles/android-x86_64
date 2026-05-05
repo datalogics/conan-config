@@ -1,0 +1,11 @@
+include(boost-options)
+include(options-libtiff)
+[settings]
+os=Android
+os.api_level=35
+arch=x86_64
+compiler=clang
+compiler.version="19"
+compiler.libcxx=c++_shared
+compiler.toolset=None
+build_type=Release
