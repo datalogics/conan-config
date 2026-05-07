@@ -1,7 +1,5 @@
 [settings]
 arch=armv8
-# override the base compiler.update
-compiler.update=8
 # bring in settings from win-arm64-wsl
 msys2/*:arch=x86_64
 doxygen/*:arch=x86_64
