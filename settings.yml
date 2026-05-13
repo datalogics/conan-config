@@ -101,6 +101,7 @@ compiler:
         threads: [None, posix, win32]  # Windows MinGW
         exception: [None, dwarf2, sjlj, seh]  # Windows MinGW
         cppstd: [None, 98, gnu98, 11, gnu11, 14, gnu14, 17, gnu17, 20, gnu20, 23, gnu23]
+        sanitizer: [null, address, thread, undefined, leak, hwaddress]
     Visual Studio: &visual_studio
         runtime: [MD, MT, MTd, MDd]
         version: ["8", "9", "10", "11", "12", "14", "15", "16", "17"]
@@ -117,6 +118,7 @@ compiler:
         runtime_type: [Debug, Release]
         cppstd: [98, 14, 17, 20, 23]
         toolset: [None, v110_xp, v120_xp, v140_xp, v141, v141_xp, v142, v143]
+        sanitizer: [null, address]
     clang:
         version: ["3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "4.0",
                   "5.0", "6.0", "7.0", "7.1", "8", "9", "10", "11", "12",
@@ -124,12 +126,14 @@ compiler:
         toolset: [None, llvm-toolset-7]
         libcxx: [None, libstdc++, libstdc++11, libc++, c++_shared, c++_static]
         cppstd: [None, 98, gnu98, 11, gnu11, 14, gnu14, 17, gnu17, 20, gnu20, 23, gnu23]
+        sanitizer: [null, address, thread, undefined, memory, hwaddress]
     apple-clang: &apple_clang
         version: ["5.0", "5.1", "6.0", "6.1", "7.0", "7.3", "8.0", "8.1", "9.0", "9.1",
                   "10.0", "11.0", "12.0", "13", "13.0", "13.1", "14", "14.0", "14.1", "14.2",
                   "15", "15.0", "16", "16.0", "16.4", "26", "26.2",]
         libcxx: [libstdc++, libc++]
         cppstd: [None, 98, gnu98, 11, gnu11, 14, gnu14, 17, gnu17, 20, gnu20, 23, gnu23]
+        sanitizer: [null, address, thread, undefined]
     intel:
         version: ["11", "12", "13", "14", "15", "16", "17", "18", "19", "19.1"]
         update: [None, ANY]
