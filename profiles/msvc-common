@@ -1,4 +1,5 @@
 include(global)
+include(win-boost-options)
 [settings]
 os=Windows
 os.subsystem=None
