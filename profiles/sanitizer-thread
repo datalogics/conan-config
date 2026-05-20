@@ -1,6 +1,3 @@
-[settings]
-compiler.sanitizer=thread
-
 [conf]
 tools.build:cflags+=["-fsanitize=thread","-fno-omit-frame-pointer"]
 tools.build:cxxflags+=["-fsanitize=thread","-fno-omit-frame-pointer"]

@@ -1,6 +1,3 @@
-[settings]
-compiler.sanitizer=undefined
-
 [conf]
 tools.build:cflags+=["-fsanitize=undefined"]
 tools.build:cxxflags+=["-fsanitize=undefined"]
