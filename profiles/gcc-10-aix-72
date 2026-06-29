@@ -14,6 +14,9 @@ build_type=Release
 
 [conf]
 tools.gnu:make_program=/opt/freeware/bin/gmake
+# expat >=2.8.2 defaults EXPAT_DEV_URANDOM OFF; AIX has no arc4random/getentropy/
+# getrandom, so re-enable /dev/urandom (restores pre-2.8.2 behavior). expat-scoped.
+expat/*:tools.cmake.cmaketoolchain:extra_variables={'EXPAT_DEV_URANDOM': 'ON'}
 [options]
 # Fix up building b2 on AIX. This will skip toolset autodetection and make b2
 # use the CC and CXX variables for building itself (and maybe even for building
