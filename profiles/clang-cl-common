@@ -6,6 +6,8 @@ os.subsystem=None
 compiler=clang
 compiler.runtime=dynamic
 compiler.runtime_type=Release
+compiler.libcxx="c++_shared"
+compiler.runtime_version=[v140-v145]
 build_type=Release
 [options]
 # --hash makes shorter filenames in the build directory, to avoid problems
