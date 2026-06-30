@@ -1,0 +1,20 @@
+include(global)
+include(win-boost-options)
+[settings]
+os=Windows
+os.subsystem=None
+compiler=clang
+compiler.runtime=dynamic
+compiler.runtime_type=Release
+build_type=Release
+[options]
+# --hash makes shorter filenames in the build directory, to avoid problems
+# on Windows, where b2.exe is 32-bit and doesn't support long paths.
+boost/*:extra_b2_flags=--hash
+boost/*:pch=False
+[buildenv]
+# clang-cl is the MSVC-compatible Clang driver; mach and AutotoolsToolchain
+# pick it up from CC/CXX. The MSVC SDK/runtime must be on PATH (run inside a
+# Visual Studio developer environment / vcvars).
+CC=clang-cl
+CXX=clang-cl
