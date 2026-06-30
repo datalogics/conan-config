@@ -1,3 +1,6 @@
 include(clang-cl-common)
 [settings]
-compiler.version=20
+# The clang-cl bundled with Visual Studio 2022 is clang 19.1.x. The "20" in the
+# profile family name predates pinning the exact toolchain; the real compiler
+# version is 19.
+compiler.version=19

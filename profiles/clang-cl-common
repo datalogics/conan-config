@@ -6,17 +6,36 @@ os.subsystem=None
 compiler=clang
 compiler.runtime=dynamic
 compiler.runtime_type=Release
-compiler.libcxx="c++_shared"
-compiler.runtime_version=[v140-v145]
+compiler.runtime_version=v144
+compiler.libcxx=c++_shared
 build_type=Release
 [options]
 # --hash makes shorter filenames in the build directory, to avoid problems
 # on Windows, where b2.exe is 32-bit and doesn't support long paths.
 boost/*:extra_b2_flags=--hash
 boost/*:pch=False
+[tool_requires]
+# clang-cl on Windows can only drive CMake via Ninja (the MinGW Makefiles
+# fallback needs a gcc/make toolchain). Provide ninja to every package built
+# with this profile so CMake-based dependencies (e.g. zlib) configure.
+ninja/[>=1.10.2 <2]
+[conf]
+# Force the Ninja generator and point CMake at clang-cl for dependency builds.
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.build:compiler_executables={"c": "clang-cl", "cpp": "clang-cl"}
 [buildenv]
-# clang-cl is the MSVC-compatible Clang driver; mach and AutotoolsToolchain
-# pick it up from CC/CXX. The MSVC SDK/runtime must be on PATH (run inside a
-# Visual Studio developer environment / vcvars).
+# clang-cl is the MSVC-compatible Clang driver; mach and CMake pick it up from
+# CC/CXX. Visual Studio bundles clang-cl under VC/Tools/Llvm but does not put it
+# on PATH, so prepend it here. The MSVC SDK/runtime come from conanvcvars.
 CC=clang-cl
 CXX=clang-cl
+PATH=+(path)C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/Llvm/x64/bin
+# Firefox 151's mach requires a full MozillaBuild tree on Windows (it adds
+# MozillaBuild's msys2 shell tools to PATH). The conan mozilla-build package
+# only ships nsinstall.exe, so point at a standalone MozillaBuild install.
+MOZILLABUILD=C:/mozilla-build
+# MozillaBuild ships no GNU make, and Mozilla's build rejects MSYS make
+# (baseconfig.mk: "MSYS make is not supported"). Append MSYS2's mingw64 bin,
+# which provides a *native* mingw32-make.exe that mach prefers over plain make;
+# MozillaBuild still supplies the msys2 shell. mingw64 has no link.exe to shadow.
+PATH+=(path)C:/msys64/mingw64/bin
