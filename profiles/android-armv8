@@ -7,6 +7,5 @@ arch=armv8
 compiler=clang
 compiler.version="19"
 compiler.libcxx=c++_shared
-compiler.toolset=None
 build_type=Release
 
