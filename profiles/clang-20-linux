@@ -7,7 +7,7 @@ compiler.libcxx=libstdc++
 build_type=Release
 [buildenv]
 # Versioned paths so the compiler invoked always matches compiler.version
-CC=/usr/bin/clang-20
-CXX=/usr/bin/clang++-20
+CC=/usr/bin/clang-21
+CXX=/usr/bin/clang++-21
 [conf]
-tools.build:compiler_executables={"c": "/usr/bin/clang-20", "cpp": "/usr/bin/clang++-20"}
+tools.build:compiler_executables={"c": "/usr/bin/clang-21", "cpp": "/usr/bin/clang++-21"}
