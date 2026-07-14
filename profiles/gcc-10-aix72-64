@@ -8,4 +8,4 @@ CFLAGS=-fexceptions -pthread -mcpu=power8 -maix64 -mvsx -mcmodel=large
 CXXFLAGS=-fexceptions -pthread -mcpu=power8 -maix64 -mvsx
 icu/*:CXXFLAGS=-ftls-model=global-dynamic -fpic -fexceptions -pthread -mcpu=power8 -maix64 -mvsx -mcmodel=large
 # For b2, take off -fexceptions and -mcmodel=large to avoid ld error involving R_TOCL
-b2/*:CXXFLAGS=-pthread -mcpu=power8 -maix64 -mvsx -mfull-toc
+b2/*:CXXFLAGS=-pthread -ftls-model=global-dynamic -mcpu=power8 -maix64 -mvsx -mfull-toc
