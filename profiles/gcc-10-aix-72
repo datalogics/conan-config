@@ -38,3 +38,7 @@ b2/*:NO_CXX11_CHECK=true
 bison/*:CPPFLAGS=-D_POSIX_SOURCE=1 -D_XOPEN_SOURCE_EXTENDED=1
 swig/*:CPPFLAGS=-D_POSIX_SOURCE=1 -D_XOPEN_SOURCE_EXTENDED=1
 swig/*:STRIP=:
+[runenv]
+# The run environment must never be empty: Conan writes an empty `for v in` list
+# into conanrunenv-*.sh, which AIX /bin/sh (ksh88) rejects as a syntax error.
+DL_RUNENV_NONEMPTY=1
