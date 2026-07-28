@@ -1,3 +1,4 @@
+include(icu-options)
 [options]
 # The boost recipe sets this to 0, which passes -d0 to b2, hiding not only the
 # compilation commands, but the errors they cause.
