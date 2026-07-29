@@ -1,3 +1,4 @@
+[options]
 leptonica/*:with_gif=False
 leptonica/*:with_webp=False
 leptonica/*:with_openjpeg=False
