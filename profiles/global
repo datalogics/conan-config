@@ -1,4 +1,7 @@
 include(icu-options)
+include(doxygen-options)
+include(opencv-options)
+include(leptonica-options)
 [options]
 # The boost recipe sets this to 0, which passes -d0 to b2, hiding not only the
 # compilation commands, but the errors they cause.
@@ -6,3 +9,7 @@ include(icu-options)
 # specified.
 boost/*:debug_level=1
 giflib/*:utils=False
+pcre/*:with_bzip2=False
+libarchive/*:with_iconv=False
+ibxml2/*:iconv=False
+libzip/*:crypto=False

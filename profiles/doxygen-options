@@ -1,0 +1,2 @@
+[options]
+doxygen/*:enable_search=False
