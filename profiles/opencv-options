@@ -1,0 +1,13 @@
+[options]
+opencv/*:contrib=False
+opencv/*:dnn=False
+opencv/*:gapi=False
+opencv/*:highgui=False
+opencv/*:with_ade=False
+opencv/*:with_eigen=False
+opencv/*:with_ffmpeg=False
+opencv/*:with_openexr=False
+opencv/*:with_protobuf=False
+opencv/*:with_quirc=False
+opencv/*:with_tiff=False
+opencv/*:with_webp=False
