@@ -5,3 +5,4 @@ include(icu-options)
 # Set to 1, which passes -d1 to b2. -d1 is what b2 uses if -d is not
 # specified.
 boost/*:debug_level=1
+giflib/*:utils=False
