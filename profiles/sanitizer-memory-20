@@ -28,7 +28,15 @@ tools.build:cflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "
 tools.build:cxxflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2", "-fno-omit-frame-pointer", "-stdlib=libc++", "-nostdinc++", "-isystem", "{{MSAN_RUNTIME_DIR}}/include/c++/v1"]
 tools.build:sharedlinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
 tools.build:exelinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
-tools.gnu:extra_configure_args+=["ac_cv_tls=__thread"]
+# elfutils probes __thread by linking a DSO with -Wl,-z,defs.  Under MSan the
+# compiler emits __msan_* calls that the runtime only provides to executables,
+# so the DSO has undefined symbols, -z,defs rejects it, and configure reports
+# "__thread support required".  Pre-seeding the cache avoids that - but
+# elfutils' configure.ac requires the value to be exactly "yes":
+#     AS_IF([test "x$ac_cv_tls" != xyes], AC_MSG_ERROR([__thread support required]))
+# so "__thread" produced "checking for __thread support... (cached) __thread"
+# followed by the same hard error it was meant to prevent.
+tools.gnu:extra_configure_args+=["ac_cv_tls=yes"]
 
 [options]
 # harfbuzz's Unicode backend pulls in glib, and with it elfutils, pcre2, libffi,
