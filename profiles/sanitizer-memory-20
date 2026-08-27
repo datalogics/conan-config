@@ -29,3 +29,23 @@ tools.build:cxxflags+=["-fsanitize=memory", "-fsanitize-memory-track-origins=2",
 tools.build:sharedlinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
 tools.build:exelinkflags+=["-fsanitize=memory", "-stdlib=libc++", "-L{{MSAN_RUNTIME_DIR}}/lib", "-Wl,-rpath,{{MSAN_RUNTIME_DIR}}/lib", "-lc++abi"]
 tools.gnu:extra_configure_args+=["ac_cv_tls=__thread"]
+
+[options]
+# harfbuzz's Unicode backend pulls in glib, and with it elfutils, pcre2, libffi,
+# libmount and libselinux.  Neither glib nor elfutils can be built under
+# MemorySanitizer:
+#   * glib's meson.build probes for the C23 free_sized / free_aligned_sized with
+#     a LINK-ONLY cc.has_function test.  glibc has neither the functions nor
+#     their declarations, but the MSan runtime defines interceptors for both, so
+#     the probe links and answers YES - then gmem.c calls free_sized() with
+#     nothing in scope and -Werror=implicit-function-declaration fails the
+#     build.  The answer is also written into glib's INSTALLED public
+#     glibconfig.h as G_HAVE_FREE_SIZED, so consumers emit the same undeclared
+#     calls.  glib offers no option to override the probe.
+#   * elfutils' src/ build directory contains a freshly linked executable named
+#     "stack", and automake places "-I. -I$(srcdir)" ahead of CXXFLAGS in its
+#     CXXCOMPILE rule.  Because -I outranks -isystem, libc++'s <format> doing
+#     "#include <stack>" resolves to that ELF binary instead of the header.
+#     srcfiles is unconditionally in bin_PROGRAMS, so it cannot be switched off.
+# Turning glib off lets harfbuzz fall back to its built-in UCDN Unicode backend.
+harfbuzz/*:with_glib=False
