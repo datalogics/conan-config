@@ -13,3 +13,4 @@ pcre/*:with_bzip2=False
 libarchive/*:with_iconv=False
 ibxml2/*:iconv=False
 libzip/*:crypto=False
+harfbuzz/*:with_glib=False
