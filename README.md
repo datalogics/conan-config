@@ -24,7 +24,7 @@ $ conan config install git@github.com:datalogics/conan-config.git
 Conan 2.22 introduces `compiler.sanitizer`, so this repo now ships mix-in profiles in `profiles/sanitizer-*`. Layer them after a platform profile, for example:
 
 ```bash
-$ conan install . -pr apple-clang-16.4-arm -pr sanitizer-address
+$ conan install . -pr apple-clang-26.2-arm -pr sanitizer-address
 ```
 
 The overlay applies the recommended `-fsanitize` compile and link flags from the [Sanitizers guide](https://docs.conan.io/2/security/sanitizers.html). Only the memory overlays (`sanitizer-memory`, `sanitizer-memory-20`) set `compiler.sanitizer`, because MSan requires a fully instrumented dependency graph and must keep its package IDs distinct. The other overlays (`sanitizer-address`, `sanitizer-hwaddress`, `sanitizer-thread`, `sanitizer-undefined`) leave `compiler.sanitizer` at its default so dependencies build cleanly.
