@@ -3,3 +3,7 @@ arch=x86
 [conf]
 # The openssl 4.x recipe maps only some os/arch pairs to a Configure target
 openssl/*:user.openssl:target=VC-WIN32
+[options]
+# The openssl 4.x recipe packages OPENSSLDIR from "Program Files/Common Files/SSL",
+# but 32-bit builds default it to "Program Files (x86)/...": set it to match
+openssl/*:extra_build_opts="--openssldir=C:/Program Files/Common Files/SSL"
