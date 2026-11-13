@@ -7,3 +7,5 @@ arch=x86
 # GCC defaults to x87 math on i386, whose excess precision differs from every other target
 tools.build:cflags+=["-msse2","-mfpmath=sse"]
 tools.build:cxxflags+=["-msse2","-mfpmath=sse"]
+# The openssl 4.x recipe maps only some os/arch pairs to a Configure target
+openssl/*:user.openssl:target=linux-x86
