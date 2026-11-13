@@ -3,3 +3,6 @@ include(clang-18-linux)
 
 [settings]
 arch=x86
+[conf]
+# The openssl 4.x recipe maps only some os/arch pairs to a Configure target
+openssl/*:user.openssl:target=linux-x86-clang

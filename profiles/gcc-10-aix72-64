@@ -2,6 +2,9 @@ include(global)
 include(gcc-10-aix-72)
 [settings]
 arch=ppc64
+[conf]
+# The openssl 4.x recipe maps only some os/arch pairs to a Configure target
+openssl/*:user.openssl:target=aix64-gcc
 [buildenv]
 OBJECT_MODE=64
 CFLAGS=-fexceptions -pthread -mcpu=power8 -maix64 -mvsx -mcmodel=large
